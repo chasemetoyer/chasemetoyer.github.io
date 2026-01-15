@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Chase J. Metoyer"
 title_separator          : "-"
 name                     : &name "Chase J. Metoyer"
-description              : &description "Chase J. Metoyer's personal website"
+description              : &description "Research prototypes in video AI, world models, and market intelligence."
 url                      : https://chasemetoyer.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,9 +26,9 @@ author:
   avatar           : "profile.png"
   name             : "Chase J. Metoyer"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "I’m Chase J. Metoyer, a finance graduate transitioning into computer science and AI research. I build applied ML systems across multimodal reasoning, generative media, and market intelligence, with a special focus on long-horizon video understanding, agentic systems, and prediction-market microstructure. I’m currently strengthening my math/CS foundations while shipping research-style prototypes and open-source tools."
+  location         : ""
+  employer         : "AI Engineering | Multimodal Systems | Quant Research"
   uri              : # URL
   email            : "cmetoyerbusiness@gmail.com" 
 
@@ -38,10 +38,10 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
+  orcid            : # URL
   semantic         : # URL
   ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : # URL
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
@@ -57,7 +57,7 @@ author:
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
