@@ -17,3 +17,5 @@ This article outlines the architecture, methodology, and initial validation of a
 Long form gameplay analysis (10+ minutes) suffers from a fundamental issue: context explosion. While modern LLMs support massive context windows (128k+), processing every frame exhaustively is computationally prohibitive and dilutes the model’s reasoning capabilities. This disrupts temporal continuity and prevents models from tracking long-range dependencies or answer causal questions about game mechanics.
 
 To address this, the system adopts the view that long-video understanding is an engineering problem orchestrating specialized modules and efficient data flow rather than scaling up a single model. The result is a Perception-Reasoning Loop that separates expensive perception from lightweight retrieval and high-level reasoning.
+
+The rest of the article can be read here: <https://medium.com/kairi-ai/towards-a-cascaded-multimodal-pipeline-for-long-horizon-gameplay-analysis-25ed6a8630c9>
