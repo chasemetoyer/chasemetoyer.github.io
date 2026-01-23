@@ -23,7 +23,7 @@ repository               : "chasemetoyer/chasemetoyer.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "IMG_2717.JPG"
   name             : "Chase J. Metoyer"
   pronouns         : # example: "she/her"  
   bio              : "I’m Chase J. Metoyer, a finance graduate transitioning into computer science and AI research. I build applied ML systems across multimodal reasoning, generative media, and market intelligence, with a special focus on long-horizon video understanding, agentic systems, and prediction-market microstructure. I’m currently strengthening my math/CS foundations while shipping research-style prototypes and open-source tools."
