@@ -7,8 +7,68 @@ author_profile: true
 
 {% include base_path %}
 
+<!-- Research Interests Navigation -->
+<nav class="research-interests">
+  <strong>Interests:</strong>
+  <a href="#long-horizon-video">Long-horizon Video</a>
+  <a href="#agentic-systems">Agentic Systems</a>
+  <a href="#prediction-markets">Prediction Markets</a>
+</nav>
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+<!-- Selected Projects -->
+<section id="selected-projects">
+  <h2>Selected Projects</h2>
+  {% assign selected_projects = site.portfolio | where: "category", "flagship" %}
+  <div class="research-grid">
+    {% for project in selected_projects %}
+    {% include portfolio-item.html project=project %}
+    {% endfor %}
+  </div>
+</section>
 
+<!-- Categorized Portfolio -->
+<section id="research-portfolio">
+  <h2>Research Portfolio</h2>
+
+  <div id="systems-tooling">
+    <h3>Systems + Tooling</h3>
+    {% assign systems_projects = site.portfolio | where: "category", "systems" %}
+    {% if systems_projects.size > 0 %}
+    <div class="research-grid">
+      {% for project in systems_projects %}
+      {% include portfolio-item.html project=project %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p><em>Coming soon.</em></p>
+    {% endif %}
+  </div>
+
+  <div id="applied-prototypes">
+    <h3>Applied / Industry-style Prototypes</h3>
+    {% assign applied_projects = site.portfolio | where: "category", "applied" %}
+    {% if applied_projects.size > 0 %}
+    <div class="research-grid">
+      {% for project in applied_projects %}
+      {% include portfolio-item.html project=project %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p><em>Coming soon.</em></p>
+    {% endif %}
+  </div>
+
+  <div id="explorations">
+    <h3>Explorations / Notes</h3>
+    {% assign exploration_projects = site.portfolio | where: "category", "explorations" %}
+    {% if exploration_projects.size > 0 %}
+    <div class="research-grid">
+      {% for project in exploration_projects %}
+      {% include portfolio-item.html project=project %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p><em>Coming soon.</em></p>
+    {% endif %}
+  </div>
+</section>

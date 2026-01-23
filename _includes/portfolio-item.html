@@ -1,0 +1,45 @@
+<div class="research-card">
+  <div class="research-card__content">
+    <h3 class="research-card__title">
+      {% if include.project.link %}
+        <a href="{{ include.project.link }}">{{ include.project.title }}</a>
+      {% else %}
+        <a href="{{ include.project.url | relative_url }}">{{ include.project.title }}</a>
+      {% endif %}
+    </h3>
+    
+    {% if include.project.thesis %}
+      <p class="research-card__thesis">{{ include.project.thesis }}</p>
+    {% endif %}
+
+    {% if include.project.tags %}
+      <div class="research-card__tags">
+        {% for tag in include.project.tags %}
+          <span class="research-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if include.project.key_result %}
+      <div class="research-card__result">
+        <strong>Key Result:</strong> {{ include.project.key_result }}
+      </div>
+    {% endif %}
+
+    {% if include.project.external_links %}
+      <div class="research-card__links">
+        {% for link in include.project.external_links %}
+          <a href="{{ link.url }}" class="research-link_btn">
+            {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %} {{ link.label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if include.project.header.teaser %}
+  <div class="research-card__thumbnail">
+    <img src="{{ include.project.header.teaser | relative_url }}" alt="{{ include.project.title }}">
+  </div>
+  {% endif %}
+</div>
