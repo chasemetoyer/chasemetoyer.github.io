@@ -1,19 +1,21 @@
 ---
 title: "Gameplay Vision LLM / Long-horizon Video Understanding"
-date: 2023-11-15
+date: 2025-12-11
 collection: portfolio
 category: flagship
 tags:
   - Long-horizon video
   - Agents
   - World models
+  - VLM
+  - Multimodal
 thesis: "End-to-end video understanding model capable of long-horizon planning and gameplay analysis using temporal latent compression."
 key_result: "State-of-the-art performance on relevant benchmarks (insert metric)."
 header:
   teaser: "/images/gameplay-vision-teaser.png"
 external_links:
   - label: "GitHub"
-    url: "https://github.com/chasemetoyer"
+    url: "https://github.com/chasemetoyer/gameplay-vision-llm/tree/main"
     icon: "fab fa-github"
   - label: "Demo"
     url: "#"
