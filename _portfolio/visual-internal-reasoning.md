@@ -1,6 +1,6 @@
 ---
 title: "Visual Internal Reasoning"
-date: 2024-01-01
+date: 2025-12-29
 collection: portfolio
 category: flagship
 tags:
