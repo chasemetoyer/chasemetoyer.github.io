@@ -14,32 +14,32 @@ header:
   teaser: "/images/visual-reasoning-teaser.png" 
 external_links:
   - label: "GitHub"
-    url: "https://github.com/chasemetoyer"
+    url: "https://github.com/chasemetoyer/visual-internal-reasoning"
     icon: "fab fa-github"
-  - label: "Blog"
-    url: "#"
-    icon: "fas fa-rss"
-  - label: "PDF"
-    url: "#"
-    icon: "fas fa-file-pdf"
-  - label: "Demo"
-    url: "#"
-    icon: "fas fa-play-circle"
 ---
 
-## Abstract
+# Visual Internal Reasoning: Causal Dependency on Latent Image Tokens
 
-Standard multimodal models reason by aligning text and image representations, but they often lack an internal "visual scratchpad" to plan or simulate spatial transformations. This project explores a decoder-only architecture that can generate discrete VQGAN visual latents as intermediate reasoning steps.
+## **Abstract**
 
-## Motivation
+Large language models (LLMs) exhibit strong performance on linguistic reasoning tasks but continue to struggle with problems requiring spatial and visual reasoning, often relying on shallow textual heuristics rather than grounded internal representations. In this work, we investigate whether equipping a transformer-based language model with an explicit internal visual latent representation improves performance on visually grounded reasoning tasks.
 
-How do we ensure that a model is actually "seeing" and reasoning spatially, rather than just matching statistical patterns in text? By forcing the model to generate visual latents, we can inspect its internal state.
+We propose a unified decoder-only architecture in which discrete image tokens, obtained from a pretrained vector-quantized autoencoder (VQGAN), are incorporated directly into the model’s vocabulary alongside standard text tokens. The model is trained autoregressively to generate an intermediate sequence of image tokens—interpreted as an internal “imagined” visual state—prior to producing a textual answer.
 
-## Method
+Our results demonstrate that models trained with forced internal visual intermediates outperform text-only baselines on spatial reasoning tasks and exhibit significant performance degradation when the imagined visual tokens are disrupted (Blindfold Accuracy: 57.0% vs. Imagined Accuracy: 90.5%), indicating that the visual representation is causally utilized.
 
-* **Architecture**: Decoder-only transformer.
-* **Intervention**: "Blindfolding" the model (suppressing visual latent generation) to see if reasoning performance drops.
+---
 
-## Results
+## **Key Findings (N=200)**
 
-The model achieves 90.5% accuracy on spatial reasoning tasks. When the visual generation pathway is blocked, performance drops to 57%, which matches the text-only baseline. This indicates the generated visual state is causally necessary.
+We evaluated the model on a "Forced Choice" spatial reasoning task (*"Does the Red Square overlap the Blue Circle?"*). The results demonstrate a clear causal dependency on the internal visual state.
+
+| Condition | Description | Accuracy | Interpretation |
+| --- | --- | --- | --- |
+| **Teacher Forced** | Ground truth visual tokens provided. | **100.0%** | **Upper Bound:** The model can perfectly interpret clear visual data. |
+| **Imagined (Greedy)** | Model generates its own visual latents. | **90.5%** | **Method:** Internal simulation provides a +33.5% gain over baseline. |
+| **Text-Only** | Visual tokens omitted entirely. | 59.0% | **Baseline:** Text priors alone are insufficient for this task. |
+| **Blindfold** | Visual tokens replaced with VQ-noise. | 57.0% | **Control:** Performance collapses to random chance (57% majority class) without visual structure. |
+
+> **Verdict:** The degradation from **90.5%** (Imagined) to **57.0%** (Blindfold) rejects the null hypothesis that the model relies solely on text shortcuts.
+<img width="700" height="700" alt="BarGraph" src="https://github.com/user-attachments/assets/0f88db07-0829-4556-9808-f5a8a8692f43" />
